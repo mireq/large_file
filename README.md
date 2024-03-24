@@ -1,6 +1,6 @@
 # Large File Optimization for Neovim
 
-This module enhances the performance of Neovim when working with large files. It automatically adjusts buffer settings and disables certain features that can degrade performance when editing large files.
+This module enhances the performance of Neovim when working with large files. It automatically adjusts buffer settings and disables certain features that can degrade performance when viewing / editing large files.
 
 ## Installation
 
@@ -40,11 +40,7 @@ require("lazy").setup({
 
 ## Usage
 
-After installation, the module will automatically optimize the settings for large files. You can manually set it up with the following command:
-
-```lua
-require("large_file").setup()
-```
+After installation, the module will automatically optimize the settings for large files.
 
 ## Configuration
 
@@ -87,6 +83,11 @@ require("large_file").setup({
 	end
 })
 ```
+
+Optional hook `on_large_file_read_pre` is executed before buffer is loaded to
+editor.
+
+Other hooks like BufWinEnter can use buffer variable `vim.b[ev.buf].is_large_file` to detect, if file is in large file model.
 
 ## Support
 
