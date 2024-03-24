@@ -30,7 +30,7 @@ Next, add the `large_file` module to your `lazy.nvim` configuration:
 ```lua
 require("lazy").setup({
 	{
-		"your-username/large_file",  -- replace with the actual path to the module
+		"mireq/large_file",
 		config = function()
 			require("large_file").setup()
 		end
